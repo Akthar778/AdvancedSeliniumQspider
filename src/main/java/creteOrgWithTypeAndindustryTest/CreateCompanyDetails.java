@@ -89,7 +89,11 @@ public class CreateCompanyDetails {
 		ac.moveToElement(logoutMouseHover).perform();
 
 		Thread.sleep(3000);
-		driver.quit();
+		
+		//here i take help of selectorHub Extenction
+		WebElement logout = driver.findElement(By.xpath("//a[normalize-space()='Sign Out']"));
+		logout.click();
+		//driver.quit();
 
 	}
 

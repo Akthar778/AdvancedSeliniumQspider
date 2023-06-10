@@ -1,0 +1,4 @@
+logout symbol locator = //img[@src="themes/softed/images/user.PNG"]
+sing out Locatot = //a[normalize-space()='Sign Out']
+contacts locator = //a[text()='Contacts']
+contactLocatorPlusIcon=//img[@title=\"Create Contact...\"]

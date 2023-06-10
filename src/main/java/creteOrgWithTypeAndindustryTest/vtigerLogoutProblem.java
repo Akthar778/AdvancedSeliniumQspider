@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class vtigerLogoutProblem {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Random random= new Random();
 		int randomNumber=random.nextInt();
 
@@ -35,9 +35,24 @@ public class vtigerLogoutProblem {
 		driver.findElement(By.id("submitButton")).submit();
 
 		//problem solving here
-		WebElement hoverAction = driver.findElement(By.xpath("//img[@src=\"themes/softed/images/user.PNG\"]"));
-Actions a = new Actions(driver);
-a.moveToElement(hoverAction).perform();
+		try{
+			
+			
+			WebElement hoverAction = driver.findElement(By.xpath("//img[@src=\"themes/softed/images/user.PNG\"]"));
+			Actions a = new Actions(driver);
+			Thread.sleep(3000);
+
+			a.moveToElement(hoverAction).perform();
+			System.out.println("log out element identified ");
+		}catch (Exception e) {
+			System.out.println("log out problem");
+		}
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[normalize-space()='Sign Out']")).click();
+		
+		
+		
+
 
 
 	}
