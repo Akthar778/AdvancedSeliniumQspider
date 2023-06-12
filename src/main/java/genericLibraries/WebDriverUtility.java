@@ -170,6 +170,7 @@ public class WebDriverUtility extends BaseClass{
 		 */
 		TakesScreenshot ts= (TakesScreenshot) driver;
 		File photo = ts.getScreenshotAs(OutputType.FILE);
+		
 	}
 
 }
