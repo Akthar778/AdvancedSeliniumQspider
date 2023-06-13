@@ -4,23 +4,25 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtility {
-	public String ReadingsingleData(String sheetname, int rolwcolum,int columnumber) throws EncryptedDocumentException, IOException {
+	public String ReadingsingleData(String sheetname, int rolwcolum,int columnumber) throws EncryptedDocumentException, IOException, InvalidFormatException {
 		File file = new File("localTime");
 		//where we (localTime) take this from screenShot class
 
 		Workbook workbook = WorkbookFactory.create(file);
 		return workbook.getSheet(sheetname).getRow(rolwcolum).getCell(columnumber).toString();
 	}
-	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException{
+	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException, InvalidFormatException{
 		
 		File file = new File("src/main/resources/datas.xlsx");
 		Workbook workbook = WorkbookFactory.create(file);
+		
 		Sheet sheet = workbook.getSheet("sheet1");
 		int rowCount = sheet.getPhysicalNumberOfRows();
 		int cellCount = sheet.getRow(0).getPhysicalNumberOfCells();

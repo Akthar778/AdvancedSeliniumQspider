@@ -4,13 +4,14 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class demo {
-	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException{
+public class ReadingMultipleDataFromExcel {
+	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException, InvalidFormatException{
 
 		File file = new File("src/main/resources/datas.xlsx");
 		Workbook workbook = WorkbookFactory.create(file);
@@ -27,8 +28,8 @@ public class demo {
 		}		
 		return data;		
 	}
-	public static void main(String[] args) throws EncryptedDocumentException, IOException {
-		demo d = new demo();
+	public static void main(String[] args) throws EncryptedDocumentException, IOException, InvalidFormatException {
+		ReadingMultipleDataFromExcel d = new ReadingMultipleDataFromExcel();
 		Object [][] obj = d.readingMultipleData();
 		for (int i = 0; i < obj.length; i++) {
 			for (int j = 0; j < obj[i].length; j++) {
