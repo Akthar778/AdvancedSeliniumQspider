@@ -15,8 +15,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Senario3 {
 	public static void main(String[] args) throws InterruptedException {
+		
 		//login click contacts create contacts logout
-
+		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -24,9 +25,9 @@ public class Senario3 {
 
 		driver.get("http://localhost:8888/");
 
-		try {//login page 
+		try {
+			//login page 
 			driver.findElement(By.name("user_name")).sendKeys("admin");
-
 
 			driver.findElement(By.name("user_password")).sendKeys("0000");
 
