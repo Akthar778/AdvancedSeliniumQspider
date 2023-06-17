@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dataProviders.DataUtilization">
+      <class name="genericLibraries.ListenersClass">
         <methods>
-          <include name="demo"/>
+          <include name="demoForListener11"/>
         </methods>
-      </class> <!-- dataProviders.DataUtilization -->
+      </class> <!-- genericLibraries.ListenersClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

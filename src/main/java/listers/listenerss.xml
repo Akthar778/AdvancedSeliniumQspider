@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		
+		<listener class-name="genericLibraries.ItestListenderImplementaion"></listener>
+		
+	</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="genericLibraries.ListenersClass2"/>
+      <class name="genericLibraries.ListenersClass1"/>
+      <class name="genericLibraries.ListenersClass"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
