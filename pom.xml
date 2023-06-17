@@ -55,9 +55,6 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.17</version>
 		</dependency>
-		
-		
-		
 		<!-- adding to avoid problem which is accor in taking data from m-->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -70,14 +67,17 @@
 			<version>3.17</version>
 		</dependency>
 		<!--  end here cod-->
-		
-		
-		
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.0.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
 		</dependency>
 	</dependencies>
 </project>

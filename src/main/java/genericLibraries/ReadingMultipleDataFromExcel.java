@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.testng.annotations.DataProvider;
 
 public class ReadingMultipleDataFromExcel {
 	public Object[][] readingMultipleData() throws EncryptedDocumentException, IOException, InvalidFormatException{
@@ -28,14 +29,17 @@ public class ReadingMultipleDataFromExcel {
 		}		
 		return data;		
 	}
+	@DataProvider(name ="testdata")
 	public static void main(String[] args) throws EncryptedDocumentException, IOException, InvalidFormatException {
 		ReadingMultipleDataFromExcel d = new ReadingMultipleDataFromExcel();
+
 		Object [][] obj = d.readingMultipleData();
 		for (int i = 0; i < obj.length; i++) {
 			for (int j = 0; j < obj[i].length; j++) {
 				System.out.println(obj[i][j]);
 			}
 		}
+				
 
 	}
 

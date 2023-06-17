@@ -1,8 +1,10 @@
 package genericLibraries;
 
 import java.io.File;
+import java.time.LocalTime;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -12,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class WebDriverUtility extends BaseClass{
+public class WebDriverUtility extends BaseClass implements PropertiFilesInterface{
 	Actions action = new Actions(driver);
 	/***
 	 * this is method is used for drang and drop purpose 
@@ -164,13 +166,24 @@ public class WebDriverUtility extends BaseClass{
 		}
 
 	}
-	public void takingScreenShot() {
+	public String takingScreenShot() {
 		/***
 		 * its used to take screenShot 
 		 */
 		TakesScreenshot ts= (TakesScreenshot) driver;
 		File photo = ts.getScreenshotAs(OutputType.FILE);
-		
+		String ldt = LocalTime.now().toString().replace(":", "-");
+		String path = System.getProperty("user.dir")+commondata+" "+ldt+".png";
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(photo, destination);
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();		
+		}
+		return path;
+
 	}
 
 }

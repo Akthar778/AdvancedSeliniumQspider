@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="xmlParametrization.xmlParametarization">
+      <class name="dataProviders.DataUtilization">
         <methods>
-          <include name="SwiggyTest" invocation-numbers="0"/>
+          <include name="demo"/>
         </methods>
-      </class> <!-- xmlParametrization.xmlParametarization -->
+      </class> <!-- dataProviders.DataUtilization -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
