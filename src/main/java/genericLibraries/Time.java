@@ -10,6 +10,7 @@ public class Time {
 		
 		String changeFormat = time1.toString().replace(":", "-");
 		System.out.println("after change : into - "+changeFormat);
+		System.out.println();
 		
 
 
